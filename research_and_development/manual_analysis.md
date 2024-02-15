@@ -35,6 +35,14 @@ NStudiesFound | If this value is `0` then there are no clinical trials available
 When creating a list of pharmaceutical companies it is necessary to remove: *inc*, *pty ltd*, etc... For example:
 - Incannex Healthcare Inc must be renamed to Incannex Healthcare for the search expession to find the trial data
 
+## Resources
+
 ### Stock List Web Applications
 
-- [NASDAQ List](https://topforeignstocks.com/wp-content/uploads/2024/01/Complete-List-of-Biotech-Stocks-Listed-on-NASDAQ-Jan-1-24.csv)
+- [NASDAQ List (csv)](https://topforeignstocks.com/wp-content/uploads/2024/01/Complete-List-of-Biotech-Stocks-Listed-on-NASDAQ-Jan-1-24.csv)
+
+### Clinical Trial Data
+
+- [clinicaltrials API information](https://classic.clinicaltrials.gov/api/gui)
+- [clinicaltrials API field list](https://classic.clinicaltrials.gov/api/info/study_fields_list)
+- [clinicaltrials API query](https://classic.clinicaltrials.gov/api/gui/demo/simple_study_fields)
