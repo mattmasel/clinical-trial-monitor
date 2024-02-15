@@ -21,6 +21,7 @@ def extract_names(company_csv_list):
   search_expressions = []
   with open(company_csv_list, newline='') as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    next(csv_reader)
     for row in csv_reader:
       company_name = row[1].split()
       for word in reversed(company_name):
