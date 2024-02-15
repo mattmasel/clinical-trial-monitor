@@ -1,0 +1,761 @@
+S.No.,Name,Ticker,Country
+1,10x Genomics Inc.  ,TXG,United States
+2,180 Life Sciences Corp. ,ATNF,United States
+3,2seventy bio Inc.  ,TSVT,United States
+4,4D Molecular Therapeutics Inc. ,FDMT,United States
+5,60 Degrees Pharmaceuticals Inc. ,SXTP,United States
+6,89bio Inc. ,ETNB,United States
+7,Aadi Bioscience Inc. ,AADI,United States
+8,AbCellera Biologics Inc. ,ABCL,Canada
+9,Abeona Therapeutics Inc. ,ABEO,United States
+10,Abivax SA ,ABVX,France
+11,Absci Corporation ,ABSI,United States
+12,ABVC BioPharma Inc. ,ABVC,United States
+13,AC Immune SA ,ACIU,Switzerland
+14,ACADIA Pharmaceuticals Inc. ,ACAD,United States
+15,Acasti Pharma Inc.  ,ACST,Canada
+16,Accelerate Diagnostics Inc. ,AXDX,United States
+17,AcelRx Pharmaceuticals Inc. ,ACRX,United States
+18,Acelyrin Inc,SLRN,United States
+19,Achieve Life Sciences Inc. ,ACHV,United States
+20,Achilles Therapeutics plc ,ACHL,United Kingdom
+21,Aclaris Therapeutics Inc. ,ACRS,United States
+22,Acorda Therapeutics Inc. ,ACOR,United States
+23,Acumen Pharmaceuticals Inc. ,ABOS,United States
+24,Acurx Pharmaceuticals Inc. ,ACXP,United States
+25,Acutus Medical Inc. ,AFIB,United States
+26,Adagene Inc. ,ADAG,China
+27,Adaptimmune Therapeutics plc ,ADAP,United Kingdom
+28,Adaptive Biotechnologies Corporation ,ADPT,United States
+29,Addex Therapeutics Ltd ,ADXN,Switzerland
+30,Adial Pharmaceuticals Inc ,ADIL,United States
+31,Adicet Bio Inc.  ,ACET,United States
+32,Aditxt Inc. ,ADTX,United States
+33,Adlai Nortye Ltd. ,ANL,Cayman Islands
+34,ADMA Biologics Inc ,ADMA,United States
+35,Adverum Biotechnologies Inc. ,ADVM,United States
+36,Aerovate Therapeutics Inc. ,AVTE,United States
+37,Aeterna Zentaris Inc. ,AEZS,Canada
+38,Affimed N.V.,AFMD,Germany
+39,Agenus Inc. ,AGEN,United States
+40,Agile Therapeutics Inc. ,AGRX,United States
+41,Agios Pharmaceuticals Inc. ,AGIO,United States
+42,Aileron Therapeutics Inc. ,ALRN,United States
+43,Ainos Inc. ,AIMD,United States
+44,Akari Therapeutics plc,AKTX,United Kingdom
+45,Akebia Therapeutics Inc. ,AKBA,United States
+46,Akero Therapeutics Inc. ,AKRO,United States
+47,Alaunos Therapeutics Inc. ,TCRT,United States
+48,Aldeyra Therapeutics Inc. ,ALDX,United States
+49,Alector Inc. ,ALEC,United States
+50,Aligos Therapeutics Inc. ,ALGS,United States
+51,Alimera Sciences Inc. ,ALIM,United States
+52,Alkermes plc ,ALKS,Ireland
+53,Allakos Inc. ,ALLK,United States
+54,Allarity Therapeutics Inc. ,ALLR,United States
+55,Allogene Therapeutics Inc. ,ALLO,United States
+56,AlloVir Inc. ,ALVR,United States
+57,Alnylam Pharmaceuticals Inc. ,ALNY,United States
+58,Alpha Tau Medical Ltd. ,DRTS,Israel
+59,Alpine Immune Sciences Inc. ,ALPN,United States
+60,Altamira Therapeutics Ltd. ,CYTO,Bermuda
+61,Alterity Therapeutics Limited ,ATHE,Australia
+62,Altimmune Inc. ,ALT,United States
+63,Alvotech ,ALVO,Luxembourg
+64,ALX Oncology Holdings Inc. ,ALXO,United States
+65,Amarin Corporation plc,AMRN,Ireland
+66,Ambrx Biopharma Inc. ,AMAM,United States
+67,Amgen Inc. ,AMGN,United States
+68,Amicus Therapeutics Inc. ,FOLD,United States
+69,Amphastar Pharmaceuticals Inc. ,AMPH,United States
+70,Amylyx Pharmaceuticals Inc. ,AMLX,United States
+71,AN2 Therapeutics Inc. ,ANTX,United States
+72,AnaptysBio Inc. ,ANAB,United States
+73,Anavex Life Sciences Corp. ,AVXL,United States
+74,Anebulo Pharmaceuticals Inc. ,ANEB,United States
+75,ANI Pharmaceuticals Inc.,ANIP,United States
+76,Anixa Biosciences Inc. ,ANIX,United States
+77,Annexon Inc. ,ANNX,United States
+78,Apellis Pharmaceuticals Inc. ,APLS,United States
+79,Apogee Therapeutics Inc. ,APGE,United States
+80,Applied Molecular Transport Inc. ,AMTI,United States
+81,Applied Therapeutics Inc. ,APLT,United States
+82,Aprea Therapeutics Inc. ,APRE,United States
+83,Aptevo Therapeutics Inc. ,APVO,United States
+84,Aptorum Group Limited  ,APM,Hong Kong
+85,Aptose Biosciences Inc. ,APTO,Canada
+86,Aquestive Therapeutics Inc. ,AQST,United States
+87,Aravive Inc. ,ARAV,United States
+88,Arbutus Biopharma Corporation ,ABUS,Canada
+89,ARCA biopharma Inc. ,ABIO,United States
+90,Arcellx Inc. ,ACLX,United States
+91,Arcturus Therapeutics Holdings Inc. ,ARCT,Israel
+92,Arcutis Biotherapeutics Inc. ,ARQT,United States
+93,Ardelyx Inc. ,ARDX,United States
+94,argenx SE ,ARGX,Netherlands
+95,Arrowhead Pharmaceuticals Inc. ,ARWR,United States
+96,ARS Pharmaceuticals Inc. ,SPRY,United States
+97,Artelo Biosciences Inc. ,ARTL,United States
+98,Arvinas Inc. ,ARVN,United States
+99,Ascendis Pharma A/S ,ASND,Denmark
+100,ASLAN Pharmaceuticals Limited ,ASLN,Singapore
+101,Aspira Women's Health Inc. ,AWH,United States
+102,Assembly Biosciences Inc. ,ASMB,United States
+103,Assertio Holdings Inc. ,ASRT,United States
+104,AstraZeneca PLC ,AZN,United Kingdom
+105,Astria Therapeutics Inc. ,ATXS,United States
+106,Astrotech Corporation  ,ASTC,United States
+107,ATAI Life Sciences N.V. ,ATAI,Germany
+108,Atara Biotherapeutics Inc. ,ATRA,United States
+109,Atossa Therapeutics Inc. ,ATOS,United States
+110,Atreca Inc.  ,BCEL,United States
+111,aTyr Pharma Inc. ,LIFE,United States
+112,Aura Biosciences Inc. ,AURA,United States
+113,Aurinia Pharmaceuticals Inc ,AUPH,Canada
+114,Autolus Therapeutics plc ,AUTL,United Kingdom
+115,Avadel Pharmaceuticals plc ,AVDL,France
+116,Avalo Therapeutics Inc. ,AVTX,United States
+117,Avalon GloboCare Corp. ,ALBT,United States
+118,Avenue Therapeutics Inc. ,ATXI,United States
+119,Avid Bioservices Inc. ,CDMO,United States
+120,Avidity Biosciences Inc. ,RNA,United States
+121,AVROBIO Inc. ,AVRO,United States
+122,Axogen Inc. ,AXGN,United States
+123,Axsome Therapeutics Inc. ,AXSM,United States
+124,Aytu BioPharma Inc.  ,AYTU,United States
+125,Barinthus Biotherapeutics plc ,BRNS,United Kingdom
+126,Beam Therapeutics Inc. ,BEAM,United States
+127,BeiGene Ltd. ,BGNE,Cayman Islands
+128,Belite Bio Inc ,BLTE,United States
+129,Benitec Biopharma Inc. ,BNTC,United States
+130,Better Therapeutics Inc. ,BTTX,United States
+131,BeyondSpring Inc. ,BYSI,United States
+132,Bicycle Therapeutics plc ,BCYC,United Kingdom
+133,bioAffinity Technologies Inc. ,BIAF,United States
+134,BioCardia Inc. ,BCDA,United States
+135,BioCryst Pharmaceuticals Inc. ,BCRX,United States
+136,Biodexa Pharmaceuticals plc ,BDRX,United Kingdom
+137,Biofrontera Inc. ,BFRI,United States
+138,Biogen Inc. ,BIIB,United States
+139,BioLineRx Ltd. ,BLRX,Israel
+140,BioMarin Pharmaceutical Inc. ,BMRN,United States
+141,Biomea Fusion Inc. ,BMEA,United States
+142,Biomerica Inc. ,BMRA,United States
+143,Bionano Genomics Inc. ,BNGO,United States
+144,Bionomics Limited ,BNOX,United States
+145,BioNTech SE ,BNTX,Germany
+146,Bio-Path Holdings Inc. ,BPTH,United States
+147,Biophytis SA  ,BPTS,France
+148,Biora Therapeutics Inc. ,BIOR,United States
+149,BioSig Technologies Inc. ,BSGM,United States
+150,Bio-Techne Corp ,TECH,United States
+151,Bioventus Inc.  ,BVS,United States
+152,BioVie Inc.  ,BIVI,United States
+153,BioXcel Therapeutics Inc. ,BTAI,United States
+154,Black Diamond Therapeutics Inc. ,BDTX,United States
+155,bluebird bio Inc. ,BLUE,United States
+156,Blueprint Medicines Corporation ,BPMC,United States
+157,Bolt Biotherapeutics Inc. ,BOLT,United States
+158,Brainstorm Cell Therapeutics Inc. ,BCLI,United States
+159,BriaCell Therapeutics Corp. ,BCTX,Canada
+160,BridgeBio Pharma Inc. ,BBIO,United States
+161,Bright Green Corporation ,BGXX,United States
+162,Bright Minds Biosciences Inc. ,DRUG,Canada
+163,Bruker Corporation ,BRKR,United States
+164,C4 Therapeutics Inc. ,CCCC,United States
+165,Cabaletta Bio Inc. ,CABA,United States
+166,CalciMedica Inc. ,CALC,United States
+167,Calliditas Therapeutics AB ,CALT,Sweden
+168,Candel Therapeutics Inc. ,CADL,United States
+169,Canopy Growth Corporation ,CGC,Canada
+170,Capricor Therapeutics Inc. ,CAPR,United States
+171,Cara Therapeutics Inc. ,CARA,United States
+172,Cardiff Oncology Inc. ,CRDF,United States
+173,Cardio Diagnostics Holdings Inc. ,CDIO,United States
+174,Cardiol Therapeutics Inc.  ,CRDL,Canada
+175,CARGO Therapeutics Inc. ,CRGX,United States
+176,Carisma Therapeutics Inc. ,CARM,United States
+177,Cartesian Therapeutics Inc. ,RNAC,United States
+178,CASI Pharmaceuticals Inc. ,CASI,United States
+179,Cassava Sciences Inc. ,SAVA,United States
+180,Catalyst Pharmaceuticals Inc. ,CPRX,United States
+181,Celldex Therapeutics Inc.,CLDX,United States
+182,Cellectar Biosciences Inc.  ,CLRB,United States
+183,Cellectis S.A. ,CLLS,France
+184,Celularity Inc.  ,CELU,United States
+185,Centessa Pharmaceuticals plc ,CNTA,United Kingdom
+186,Cerevel Therapeutics Holdings Inc. ,CERE,United States
+187,CervoMed Inc. ,CRVO,United States
+188,Champions Oncology Inc. ,CSBR,United States
+189,Checkpoint Therapeutics Inc. ,CKPT,United States
+190,Chemomab Therapeutics Ltd. ,CMMB,Israel
+191,Chimerix Inc. ,CMRX,United States
+192,China SXT Pharmaceuticals Inc. ,SXTC,China
+193,Cidara Therapeutics Inc. ,CDTX,United States
+194,Cingulate Inc. ,CING,United States
+195,Citius Pharmaceuticals Inc. ,CTXR,United States
+196,Clearmind Medicine Inc. ,CMND,Canada
+197,Clearside Biomedical Inc. ,CLSD,United States
+198,Clene Inc. ,CLNN,United States
+199,Clever Leaves Holdings Inc. ,CLVR,Colombia
+200,CNS Pharmaceuticals Inc. ,CNSP,United States
+201,Cocrystal Pharma Inc. ,COCP,United States
+202,Coeptis Therapeutics Holdings Inc. ,COEP,United States
+203,Cogent Biosciences Inc. ,COGT,United States
+204,Cognition Therapeutics Inc. ,CGTX,United States
+205,Coherus BioSciences Inc. ,CHRS,United States
+206,Collegium Pharmaceutical Inc. ,COLL,United States
+207,COMPASS Pathways Plc ,CMPS,United Kingdom
+208,Compass Therapeutics Inc. ,CMPX,United States
+209,Compugen Ltd. ,CGEN,Israel
+210,Conduit Pharmaceuticals Inc. ,CDT,United States
+211,Connect Biopharma Holdings Limited ,CNTB,China
+212,Context Therapeutics Inc. ,CNTX,United States
+213,Corbus Pharmaceuticals Holdings Inc. ,CRBP,United States
+214,Corcept Therapeutics Incorporated ,CORT,United States
+215,CorMedix Inc. ,CRMD,United States
+216,Corvus Pharmaceuticals Inc. ,CRVS,United States
+217,Cosmos Health Inc. ,COSM,United States
+218,Coya Therapeutics Inc. ,COYA,United States
+219,Creative Medical Technology Holdings Inc. ,CELZ,United States
+220,Crinetics Pharmaceuticals Inc. ,CRNX,United States
+221,CRISPR Therapeutics AG ,CRSP,Switzerland
+222,CryoPort Inc. ,CYRX,United States
+223,Cue Biopharma Inc. ,CUE,United States
+224,Cullinan Oncology Inc. ,CGEM,United States
+225,Cumberland Pharmaceuticals Inc. ,CPIX,United States
+226,CureVac N.V. ,CVAC,Germany
+227,Curis Inc. ,CRIS,United States
+228,Cutera Inc. ,CUTR,United States
+229,CVRx Inc. ,CVRX,United States
+230,Cyclacel Pharmaceuticals Inc. ,CYCC,United States
+231,Cyclerion Therapeutics Inc. ,CYCN,United States
+232,Cyclo Therapeutics Inc. ,CYTH,United States
+233,CymaBay Therapeutics Inc. ,CBAY,United States
+234,Cyteir Therapeutics Inc. ,CYT,United States
+235,Cytek Biosciences Inc. ,CTKB,United States
+236,Cytokinetics Incorporated ,CYTK,United States
+237,CytoMed Therapeutics Limited ,GDTC,Singapore
+238,CytomX Therapeutics Inc. ,CTMX,United States
+239,Dare Bioscience Inc. ,DARE,United States
+240,Day One Biopharmaceuticals Inc. ,DAWN,United States
+241,DBV Technologies S.A. ,DBVT,France
+242,Deciphera Pharmaceuticals Inc. ,DCPH,United States
+243,Denali Therapeutics Inc. ,DNLI,United States
+244,Dermata Therapeutics Inc. ,DRMA,United States
+245,Design Therapeutics Inc. ,DSGN,United States
+246,DiaMedica Therapeutics Inc. ,DMAC,United States
+247,Dianthus Therapeutics Inc. ,DNTH,United States
+248,Disc Medicine Inc. ,IRON,United States
+249,DMK Pharmaceuticals Corporation ,DMK,United States
+250,Dominari Holdings Inc. ,DOMH,United States
+251,Durect Corporation ,DRRX,United States
+252,Dyadic International Inc. ,DYAI,United States
+253,Dynavax Technologies Corporation ,DVAX,United States
+254,Eagle Pharmaceuticals Inc. ,EGRX,United States
+255,EDAP TMS S.A. ,EDAP,France
+256,Edesa Biotech Inc. ,EDSA,United States
+257,Edgewise Therapeutics Inc. ,EWTX,United States
+258,Editas Medicine Inc. ,EDIT,United States
+259,Edoc Acquisition Corp.  ,ADOC,United States
+260,effector Therapeutics Inc. ,EFTR,United States
+261,Eiger BioPharmaceuticals Inc. ,EIGR,United States
+262,electroCore Inc. ,ECOR,United States
+263,Eledon Pharmaceuticals Inc. ,ELDN,United States
+264,Elevai Labs Inc. ,ELAB,United States
+265,Elevation Oncology Inc. ,ELEV,United States
+266,Elicio Therapeutics Inc. ,ELTX,United States
+267,Eliem Therapeutics Inc ,ELYM,United States
+268,Enanta Pharmaceuticals Inc. ,ENTA,United States
+269,ENDRA Life Sciences Inc. ,NDRA,United States
+270,enGene Holdings Inc. ,ENGN,Canada
+271,Enliven Therapeutics Inc. ,ELVN,United States
+272,Enlivex Therapeutics Ltd. ,ENLV,Israel
+273,Ensysce Biosciences Inc. ,ENSC,United States
+274,Entera Bio Ltd. ,ENTX,Israel
+275,Entrada Therapeutics Inc. ,TRDA,United States
+276,Enveric Biosciences Inc. ,ENVB,United States
+277,Equillium Inc. ,EQ,United States
+278,Erasca Inc. ,ERAS,United States
+279,Esperion Therapeutics Inc. ,ESPR,United States
+280,ESSA Pharma Inc. ,EPIX,Canada
+281,Estrella Immunopharma Inc. ,ESLA,United States
+282,Eterna Therapeutics Inc. ,ERNA,United States
+283,Eton Pharmaceuticals Inc. ,ETON,United States
+284,Evaxion Biotech A/S ,EVAX,Denmark
+285,Evoke Pharma Inc. ,EVOK,United States
+286,Evolus Inc. ,EOLS,United States
+287,Evotec SE ,EVO,Germany
+288,Exelixis Inc. ,EXEL,United States
+289,Exicure Inc. ,XCUR,United States
+290,Exscientia Plc ,EXAI,United Kingdom
+291,Eyenovia Inc. ,EYEN,United States
+292,EyePoint Pharmaceuticals Inc. ,EYPT,United States
+293,Fate Therapeutics Inc. ,FATE,United States
+294,Fennec Pharmaceuticals Inc. ,FENC,United States
+295,FibroGen Inc ,FGEN,United States
+296,Finch Therapeutics Group Inc. ,FNCH,United States
+297,First Wave BioPharma Inc. ,FWBI,United States
+298,Flora Growth Corp. ,FLGC,Canada
+299,Fonar Corporation ,FONR,United States
+300,Forte Biosciences Inc. ,FBRX,United States
+301,Fortress Biotech Inc. ,FBIO,United States
+302,Freeline Therapeutics Holdings plc ,FRLN,United Kingdom
+303,FSD Pharma Inc. ,HUGE,Canada
+304,Fulcrum Therapeutics Inc. ,FULC,United States
+305,Fusion Pharmaceuticals Inc. ,FUSN,Canada
+306,G1 Therapeutics Inc. ,GTHX,United States
+307,Gain Therapeutics Inc. ,GANX,United States
+308,Galapagos NV ,GLPG,Belgium
+309,Galectin Therapeutics Inc. ,GALT,United States
+310,Galecto Inc. ,GLTO,Denmark
+311,Galera Therapeutics Inc. ,GRTX,United States
+312,Galmed Pharmaceuticals Ltd. ,GLMD,Israel
+313,Gamida Cell Ltd. ,GMDA,Israel
+314,Genelux Corporation ,GNLX,United States
+315,Genenta Science S.p.A. ,GNTA,Italy
+316,Generation Bio Co. ,GBIO,United States
+317,Genetic Technologies Ltd ,GENE,Australia
+318,GENFIT S.A. ,GNFT,France
+319,Genmab A/S ,GMAB,Denmark
+320,Genprex Inc. ,GNPX,United States
+321,GeoVax Labs Inc. ,GOVX,United States
+322,Geron Corporation ,GERN,United States
+323,GH Research PLC ,GHRS,Ireland
+324,GigCapital 5 Inc. ,GIA,United States
+325,Gilead Sciences Inc. ,GILD,United States
+326,GlycoMimetics Inc. ,GLYC,United States
+327,Gossamer Bio Inc. ,GOSS,United States
+328,Gracell Biotechnologies Inc. ,GRCL,China
+329,Greenwich LifeSciences Inc. ,GLSI,United States
+330,GRI Bio Inc. ,GRI,United States
+331,Grifols S.A. ,GRFS,Spain
+332,Gritstone bio Inc. ,GRTS,United States
+333,GT Biopharma Inc. ,GTBP,United States
+334,Guardion Health Sciences Inc. ,GHSI,United States
+335,Gyre Therapeutics Inc. ,GYRE,United States
+336,Halozyme Therapeutics Inc. ,HALO,United States
+337,Harmony Biosciences Holdings Inc. ,HRMY,United States
+338,Harpoon Therapeutics Inc. ,HARP,United States
+339,Harrow Inc. ,HROW,United States
+340,Harvard Bioscience Inc. ,HBIO,United States
+341,HCW Biologics Inc. ,HCWB,United States
+342,Helius Medical Technologies Inc.   ,HSDT,United States
+343,Hepion Pharmaceuticals Inc. ,HEPA,United States
+344,Heron Therapeutics Inc. ,HRTX,United States
+345,HilleVax Inc. ,HLVX,United States
+346,Homology Medicines Inc. ,FIXX,United States
+347,Hookipa Pharma Inc. ,HOOK,United States
+348,Hoth Therapeutics Inc. ,HOTH,United States
+349,Humacyte Inc. ,HUMA,United States
+350,HutchMed (China) Limited ,HCM,Hong Kong
+351,ICON plc ,ICLR,Ireland
+352,Icosavax Inc. ,ICVX,United States
+353,IDEAYA Biosciences Inc. ,IDYA,United States
+354,IDEXX Laboratories Inc. ,IDXX,United States
+355,IGM Biosciences Inc. ,IGMS,United States
+356,Ikena Oncology Inc. ,IKNA,United States
+357,I-MAB ,IMAB,China
+358,Immatics N.V. ,IMTX,Germany
+359,ImmuCell Corporation ,ICCC,United States
+360,Immuneering Corporation  ,IMRX,United States
+361,Immunic Inc. ,IMUX,United States
+362,ImmunityBio Inc. ,IBRX,United States
+363,Immunocore Holdings plc ,IMCR,United Kingdom
+364,ImmunoGen Inc. ,IMGN,United States
+365,ImmunoPrecise Antibodies Ltd. ,IPA,Canada
+366,Immunovant Inc. ,IMVT,United States
+367,Immuron Limited ,IMRN,Australia
+368,Immutep Limited ,IMMP,Australia
+369,Imunon Inc. ,IMNN,United States
+370,IN8bio Inc. ,INAB,United States
+371,Incyte Corp. ,INCY,United States
+372,Indaptus Therapeutics Inc. ,INDP,United States
+373,Indivior PLC ,INDV,United Kingdom
+374,InflaRx N.V. ,IFRX,Germany
+375,Inhibikase Therapeutics Inc. ,IKT,United States
+376,Inhibrx Inc. ,INBX,United States
+377,InMed Pharmaceuticals Inc. ,INM,Canada
+378,InMode Ltd. ,INMD,Israel
+379,INmune Bio Inc. ,INMB,United States
+380,Innate Pharma S.A. ,IPHA,France
+381,Innoviva Inc. ,INVA,United States
+382,Inotiv Inc. ,NOTV,United States
+383,Inozyme Pharma Inc. ,INZY,United States
+384,Insmed Incorporated ,INSM,United States
+385,Instil Bio Inc. ,TIL,United States
+386,Intellia Therapeutics Inc. ,NTLA,United States
+387,Intensity Therapeutics Inc. ,INTS,United States
+388,Intercure Ltd. ,INCR,Israel
+389,Intra-Cellular Therapies Inc. ,ITCI,United States
+390,Inventiva S.A. ,IVA,France
+391,InVivo Therapeutics Holdings Corp ,NVIV,United States
+392,Invivyd Inc. ,IVVD,United States
+393,IO Biotech Inc. ,IOBT,Denmark
+394,Ionis Pharmaceuticals Inc. ,IONS,United States
+395,Iovance Biotherapeutics Inc. ,IOVA,United States
+396,IRIDEX Corporation ,IRIX,United States
+397,Ironwood Pharmaceuticals Inc.  ,IRWD,United States
+398,iTeos Therapeutics Inc. ,ITOS,United States
+399,Iterum Therapeutics plc ,ITRM,Ireland
+400,Jaguar Health Inc. ,JAGX,United States
+401,Janux Therapeutics Inc. ,JANX,United States
+402,Jasper Therapeutics Inc. ,JSPR,United States
+403,Jazz Pharmaceuticals plc ,JAZZ,Ireland
+404,Journey Medical Corporation ,DERM,United States
+405,KALA BIO Inc. ,KALA,United States
+406,KalVista Pharmaceuticals Inc. ,KALV,United Kingdom
+407,Kamada Ltd. ,KMDA,Israel
+408,Karuna Therapeutics Inc. ,KRTX,United States
+409,Kazia Therapeutics Limited ,KZIA,Australia
+410,Keros Therapeutics Inc. ,KROS,United States
+411,Kezar Life Sciences Inc. ,KZR,United States
+412,Kineta Inc. ,KA,United States
+413,Kiniksa Pharmaceuticals Ltd.  ,KNSA,United States
+414,Kinnate Biopharma Inc. ,KNTE,United States
+415,Kintara Therapeutics Inc. ,KTRA,United States
+416,Kiora Pharmaceuticals Inc.  ,KPRX,United States
+417,Kodiak Sciences Inc ,KOD,United States
+418,Korro Bio Inc. ,KRRO,United States
+419,Krystal Biotech Inc. ,KRYS,United States
+420,Kura Oncology Inc. ,KURA,United States
+421,Lantern Pharma Inc. ,LTRN,United States
+422,Lantheus Holdings Inc. ,LNTH,United States
+423,Larimar Therapeutics Inc. ,LRMR,United States
+424,LAVA Therapeutics N.V. ,LVTX,Netherlands
+425,Leap Therapeutics Inc. ,LPTX,United States
+426,Legend Biotech Corporation ,LEGN,United States
+427,Lexaria Bioscience Corp. ,LEXX,Canada
+428,Lexeo Therapeutics Inc. ,LXEO,United States
+429,Lexicon Pharmaceuticals Inc. ,LXRX,United States
+430,LianBio ,LIAN,United States
+431,Lifecore Biomedical Inc. ,LFCR,United States
+432,Lifevantage Corporation  ,LFVN,United States
+433,Ligand Pharmaceuticals Incorporated ,LGND,United States
+434,Lipella Pharmaceuticals Inc. ,LIPO,United States
+435,Lipocine Inc. ,LPCN,United States
+436,Liquidia Corporation ,LQDA,United States
+437,LivaNova PLC ,LIVN,United Kingdom
+438,Lixte Biotechnology Holdings Inc. ,LIXT,United States
+439,Longboard Pharmaceuticals Inc. ,LBPH,United States
+440,Lucid Diagnostics Inc. ,LUCD,United States
+441,Lucy Scientific Discovery Inc. ,LSDI,Canada
+442,LumiraDx Limited ,LMDX,Cayman Islands
+443,Lumos Pharma Inc. ,LUMO,United States
+444,Luna Innovations Incorporated ,LUNA,United States
+445,Lyell Immunopharma Inc. ,LYEL,United States
+446,MacroGenics Inc. ,MGNX,United States
+447,Madrigal Pharmaceuticals Inc. ,MDGL,United States
+448,Mainz Biomed N.V. ,MYNZ,Germany
+449,MannKind Corporation ,MNKD,United States
+450,Maravai LifeSciences Holdings Inc.  ,MRVI,United States
+451,Marinus Pharmaceuticals Inc. ,MRNS,United States
+452,Marker Therapeutics Inc. ,MRKR,United States
+453,Masimo Corporation ,MASI,United States
+454,MaxCyte Inc. ,MXCT,United States
+455,Medicinova Inc ,MNOV,United States
+456,Medpace Holdings Inc. ,MEDP,United States
+457,MEI Pharma Inc. ,MEIP,United States
+458,MeiraGTx Holdings plc ,MGTX,United States
+459,Mereo BioPharma Group plc ,MREO,United Kingdom
+460,Merrimack Pharmaceuticals Inc. ,MACK,United States
+461,Mersana Therapeutics Inc. ,MRSN,United States
+462,Merus N.V. ,MRUS,Netherlands
+463,Mesoblast Limited ,MESO,Australia
+464,Microbot Medical Inc. ,MBOT,Israel
+465,Milestone Pharmaceuticals Inc. ,MIST,Canada
+466,MiMedx Group Inc ,MDXG,United States
+467,Mind Medicine (MindMed) Inc. ,MNMD,United States
+468,Mineralys Therapeutics Inc. ,MLYS,United States
+469,Minerva Neurosciences Inc ,NERV,United States
+470,MIRA Pharmaceuticals Inc. ,MIRA,United States
+471,Mirati Therapeutics Inc. ,MRTX,United States
+472,Mirum Pharmaceuticals Inc. ,MIRM,United States
+473,Moderna Inc. ,MRNA,United States
+474,Molecular Partners AG ,MOLN,Switzerland
+475,Molecular Templates Inc. ,MTEM,United States
+476,Moleculin Biotech Inc. ,MBRX,United States
+477,Monopar Therapeutics Inc. ,MNPR,United States
+478,Monte Rosa Therapeutics Inc. ,GLUE,United States
+479,MoonLake Immunotherapeutics  ,MLTX,United States
+480,Morphic Holding Inc. ,MORF,United States
+481,MorphoSys AG ,MOR,Germany
+482,Movano Inc. ,MOVE,United States
+483,Mural Oncology plc  ,MURA,Ireland
+484,Mustang Bio Inc. ,MBIO,United States
+485,MyMD Pharmaceuticals Inc. ,MYMD,United States
+486,Myriad Genetics Inc. ,MYGN,United States
+487,Nanobiotix S.A. ,NBTX,France
+488,NanoString Technologies Inc. ,NSTG,United States
+489,National Research Corporation  ,NRC,United States
+490,Nature's Sunshine Products Inc. ,NATR,United States
+491,Nautilus Biotechnolgy Inc. ,NAUT,United States
+492,Nektar Therapeutics  ,NKTR,United States
+493,Neogen Corporation ,NEOG,United States
+494,Neptune Wellness Solutions Inc. ,NEPT,Canada
+495,NeuBase Therapeutics Inc.  ,NBSE,United States
+496,Neumora Therapeutics Inc. ,NMRA,United States
+497,NeuroBo Pharmaceuticals Inc. ,NRBO,United States
+498,Neurocrine Biosciences Inc. ,NBIX,United States
+499,Neurogene Inc.  ,NGNE,Canada
+500,NeuroSense Therapeutics Ltd. ,NRSN,Israel
+501,NewAmsterdam Pharma Company N.V. ,NAMS,Netherlands
+502,NexImmune Inc. ,NEXI,United States
+503,NextCure Inc. ,NXTC,United States
+504,NGM Biopharmaceuticals Inc. ,NGM,United States
+505,Nkarta Inc. ,NKTX,United States
+506,NKGen Biotech Inc. ,NKGN,United States
+507,NLS Pharmaceutics Ltd. ,NLSP,Switzerland
+508,Notable Labs Ltd. ,NTBL,Israel
+509,Novavax Inc. ,NVAX,United States
+510,NRX Pharmaceuticals Inc. ,NRXP,United States
+511,NuCana plc ,NCNA,United Kingdom
+512,Nurix Therapeutics Inc. ,NRIX,United States
+513,Nuvalent Inc.  ,NUVL,United States
+514,Nuwellis Inc. ,NUWE,United States
+515,Ocean Biomedical Inc. ,OCEA,United States
+516,Ocugen Inc. ,OCGN,United States
+517,Ocular Therapeutix Inc. ,OCUL,United States
+518,Oculis Holding AG ,OCS,Switzerland
+519,Ocuphire Pharma Inc. ,OCUP,United States
+520,OKYO Pharma Limited ,OKYO,Guernsey
+521,Olema Pharmaceuticals Inc. ,OLMA,United States
+522,Olink Holding AB,OLK,Sweden
+523,Omega Therapeutics Inc. ,OMGA,United States
+524,Omeros Corporation ,OMER,United States
+525,OmniAb Inc. ,OABI,United States
+526,Oncocyte Corporation ,OCX,United States
+527,Oncolytics Biotech Inc. ,ONCY,Canada
+528,Onconetix Inc. ,ONCO,United States
+529,Onconova Therapeutics Inc. ,ONTX,United States
+530,Oncternal Therapeutics Inc. ,ONCT,United States
+531,OPKO Health Inc. ,OPK,United States
+532,Opthea Limited ,OPT,Australia
+533,OptiNose Inc. ,OPTN,United States
+534,Oramed Pharmaceuticals Inc. ,ORMP,Israel
+535,Orchard Therapeutics plc ,ORTX,United Kingdom
+536,Organigram Holdings Inc. ,OGI,Canada
+537,Organogenesis Holdings Inc.  ,ORGO,United States
+538,Organovo Holdings Inc. ,ONVO,United States
+539,Orgenesis Inc. ,ORGS,United States
+540,Oric Pharmaceuticals Inc. ,ORIC,United States
+541,Outlook Therapeutics Inc. ,OTLK,United States
+542,Outset Medical Inc. ,OM,United States
+543,Ovid Therapeutics Inc. ,OVID,United States
+544,Pacific Biosciences of California Inc. ,PACB,United States
+545,Pacira BioSciences Inc. ,PCRX,United States
+546,PainReform Ltd. ,PRFX,Israel
+547,Palisade Bio Inc. ,PALI,United States
+548,Panbela Therapeutics Inc. ,PBLA,United States
+549,Pasithea Therapeutics Corp. ,KTTA,United States
+550,Passage Bio Inc. ,PASG,United States
+551,PDS Biotechnology Corporation ,PDSB,United States
+552,PepGen Inc. ,PEPG,United States
+553,Petros Pharmaceuticals Inc. ,PTPI,United States
+554,PharmaCyte  Biotech Inc. ,PMCB,United States
+555,Pharming Group N.V. ,PHAR,Netherlands
+556,Pharvaris N.V. ,PHVS,Netherlands
+557,Phathom Pharmaceuticals Inc. ,PHAT,United States
+558,PHAXIAM Therapeutics S.A.. ,PHXM,France
+559,Phibro Animal Health Corporation  ,PAHC,United States
+560,Phio Pharmaceuticals Corp. ,PHIO,United States
+561,Pieris Pharmaceuticals Inc. ,PIRS,United States
+562,Pliant Therapeutics Inc. ,PLRX,United States
+563,Pluri Inc. ,PLUR,Israel
+564,POINT Biopharma Global Inc. ,PNT,United States
+565,Poseida Therapeutics Inc. ,PSTX,United States
+566,Praxis Precision Medicines Inc. ,PRAX,United States
+567,Precigen Inc. ,PGEN,United States
+568,Precipio Inc.  ,PRPO,United States
+569,Precision BioSciences Inc. ,DTIL,United States
+570,Precision Optics Corporation Inc. ,POCI,United States
+571,Prenetics Global Limited  ,PRE,Hong Kong
+572,Procaps Group S.A. ,PROC,Luxembourg
+573,Processa Pharmaceuticals Inc. ,PCSA,United States
+574,ProKidney Corp.  ,PROK,United States
+575,ProMIS Neurosciences Inc.  ,PMN,Canada
+576,ProPhase Labs Inc.  ,PRPH,United States
+577,ProQR Therapeutics N.V. ,PRQR,Netherlands
+578,Protagenic Therapeutics Inc. ,PTIX,United States
+579,Protagonist Therapeutics Inc. ,PTGX,United States
+580,Protara Therapeutics Inc.  ,TARA,United States
+581,Prothena Corporation plc ,PRTA,United States
+582,PTC Therapeutics Inc. ,PTCT,United States
+583,Pulmatrix Inc. ,PULM,United States
+584,Puma Biotechnology Inc ,PBYI,United States
+585,PureTech Health plc ,PRTC,United States
+586,Purple Biotech Ltd. ,PPBT,Israel
+587,Pyxis Oncology Inc. ,PYXS,United States
+588,Qilian International Holding Group Ltd. ,QLI,China
+589,Qualigen Therapeutics Inc. ,QLGN,United States
+590,Quanterix Corporation ,QTRX,United States
+591,Quantum-Si Incorporated  ,QSI,United States
+592,Quince Therapeutics Inc. ,QNCX,United States
+593,Rain Oncology Inc. ,RAIN,United States
+594,Rallybio Corporation ,RLYB,United States
+595,RAPT Therapeutics Inc. ,RAPT,United States
+596,RayzeBio Inc. ,RYZB,United States
+597,Recursion Pharmaceuticals Inc.  ,RXRX,United States
+598,Redhill Biopharma Ltd. ,RDHL,Israel
+599,Regeneron Pharmaceuticals Inc. ,REGN,United States
+600,REGENXBIO Inc. ,RGNX,United States
+601,Regulus Therapeutics Inc. ,RGLS,United States
+602,Relay Therapeutics Inc. ,RLAY,United States
+603,Relmada Therapeutics Inc. ,RLMD,United States
+604,Reneo Pharmaceuticals Inc. ,RPHM,United States
+605,Renovaro Biosciences Inc. ,RENB,United States
+606,RenovoRx Inc. ,RNXT,United States
+607,Repare Therapeutics Inc. ,RPTX,Canada
+608,Repligen Corporation ,RGEN,United States
+609,Replimune Group Inc. ,REPL,United States
+610,Revance Therapeutics Inc. ,RVNC,United States
+611,Revelation Biosciences Inc. ,REVB,United States
+612,Reviva Pharmaceuticals Holdings Inc.  ,RVPH,United States
+613,Revolution Medicines Inc. ,RVMD,United States
+614,Rezolute Inc. ,RZLT,United States
+615,Rhythm Pharmaceuticals Inc. ,RYTM,United States
+616,Rigel Pharmaceuticals Inc. ,RIGL,United States
+617,Rocket Pharmaceuticals Inc. ,RCKT,United States
+618,Rockwell Medical Inc. ,RMTI,United States
+619,Roivant Sciences Ltd. ,ROIV,United Kingdom
+620,Royalty Pharma plc   ,RPRX,United States
+621,RxSight Inc. ,RXST,United States
+622,SAB Biotherapeutics Inc. ,SABS,United States
+623,Safety Shot Inc. ,SHOT,United States
+624,Sage Therapeutics Inc. ,SAGE,United States
+625,Sagimet Biosciences Inc. ,SGMT,United States
+626,Salarius Pharmaceuticals Inc. ,SLRX,United States
+627,Sangamo Therapeutics Inc. ,SGMO,United States
+628,Sanofi ,SNY,France
+629,Sarepta Therapeutics Inc.  ,SRPT,United States
+630,Savara Inc. ,SVRA,United States
+631,Scholar Rock Holding Corporation ,SRRK,United States
+632,Schrodinger Inc. ,SDGR,United States
+633,Scilex Holding Company ,SCLX,United States
+634,Scinai Immunotherapeutics Ltd. ,SCNI,Israel
+635,SciSparc Ltd. ,SPRC,Israel
+636,scPharmaceuticals Inc. ,SCPH,United States
+637,Scynexis Inc,SCYX,United States
+638,SeaStar Medical Holding Corporation ,ICU,United States
+639,Seelos Therapeutics Inc. ,SEEL,United States
+640,SELLAS Life Sciences Group Inc. ,SLS,United States
+641,Semler Scientific Inc. ,SMLR,United States
+642,Sensei Biotherapeutics Inc. ,SNSE,United States
+643,Senti Biosciences Inc. ,SNTI,United States
+644,Seres Therapeutics Inc. ,MCRB,United States
+645,Shattuck Labs Inc. ,STTK,United States
+646,Shuttle Pharmaceuticals Holdings Inc. ,SHPH,United States
+647,SIGA Technologies Inc. ,SIGA,United States
+648,Silence Therapeutics Plc ,SLN,United Kingdom
+649,SNDL Inc. ,SNDL,Canada
+650,Societal CDMO Inc. ,SCTL,United States
+651,Soleno Therapeutics Inc. ,SLNO,United States
+652,Sol-Gel Technologies Ltd. ,SLGL,Israel
+653,Solid Biosciences Inc. ,SLDB,United States
+654,Soligenix Inc. ,SNGX,United States
+655,SomaLogic Inc.  ,SLGC,United States
+656,Sonnet BioTherapeutics Holdings Inc. ,SONN,United States
+657,Sonoma Pharmaceuticals Inc. ,SNOA,United States
+658,SOPHiA GENETICS SA ,SOPH,Switzerland
+659,Spero Therapeutics Inc. ,SPRO,United States
+660,SpringWorks Therapeutics Inc. ,SWTX,United States
+661,Spyre Therapeutics Inc. ,SYRE,United States
+662,Standard BioTools Inc. ,LAB,United States
+663,Star Equity Holdings Inc. ,STRR,United States
+664,Stoke Therapeutics Inc. ,STOK,United States
+665,Structure Therapeutics Inc. ,GPCR,United States
+666,Summit Therapeutics Inc.  ,SMMT,United States
+667,Sunshine Biopharma Inc. ,SBFM,Canada
+668,Supernus Pharmaceuticals Inc. ,SUPN,United States
+669,Sutro Biopharma Inc. ,STRO,United States
+670,Syndax Pharmaceuticals Inc. ,SNDX,United States
+671,Synlogic Inc. ,SYBX,United States
+672,Syros Pharmaceuticals Inc. ,SYRS,United States
+673,Talis Biomedical Corporation ,TLIS,United States
+674,Tango Therapeutics Inc.,TNGX,United States
+675,Taysha Gene Therapies Inc. ,TSHA,United States
+676,TC BioPharm (Holdings) plc ,TCBP,United Kingdom
+677,Tempest Therapeutics Inc. ,TPST,United States
+678,Tenax Therapeutics Inc. ,TENX,United States
+679,Terns Pharmaceuticals Inc. ,TERN,United States
+680,TFF Pharmaceuticals Inc. ,TFFP,United States
+681,TG Therapeutics Inc. ,TGTX,United States
+682,Tharimmune Inc. ,THAR,United States
+683,TherapeuticsMD Inc. ,TXMD,United States
+684,Theratechnologies Inc. ,THTX,Canada
+685,Theravance Biopharma Inc. ,TBPH,Cayman Islands
+686,Theseus Pharmaceuticals Inc. ,THRX,United States
+687,Third Harmonic Bio Inc. ,THRD,United States
+688,Tilray Brands Inc.  ,TLRY,United States
+689,Titan Pharmaceuticals Inc. ,TTNP,United States
+690,Tivic Health Systems Inc. ,TIVC,United States
+691,Tiziana Life Sciences Ltd. ,TLSA,United Kingdom
+692,Tonix Pharmaceuticals Holding Corp. ,TNXP,United States
+693,Tourmaline Bio Inc. ,TRML,United States
+694,TRACON Pharmaceuticals Inc. ,TCON,United States
+695,TransCode Therapeutics Inc. ,RNAZ,United States
+696,TransMedics Group Inc. ,TMDX,United States
+697,Travere Therapeutics Inc. ,TVTX,United States
+698,Treace Medical Concepts Inc. ,TMCI,United States
+699,Trevena Inc. ,TRVN,United States
+700,Trevi Therapeutics Inc. ,TRVI,United States
+701,Trinity Biotech plc ,TRIB,Ireland
+702,TScan Therapeutics Inc. ,TCRX,United States
+703,Turnstone Biologics Corp. ,TSBX,United States
+704,Twist Bioscience Corporation ,TWST,United States
+705,Tyra Biosciences Inc. ,TYRA,United States
+706,Ultragenyx Pharmaceutical Inc. ,RARE,United States
+707,Unicycive Therapeutics Inc. ,UNCY,United States
+708,uniQure N.V. ,QURE,Netherlands
+709,United Therapeutics Corporation ,UTHR,United States
+710,Unity Biotechnology Inc. ,UBX,United States
+711,Universe Pharmaceuticals Inc. ,UPC,China
+712,UroGen Pharma Ltd. ,URGN,Israel
+713,Vaccinex Inc. ,VCNX,United States
+714,Valneva SE ,VALN,France
+715,Vanda Pharmaceuticals Inc. ,VNDA,United States
+716,Vaxart Inc ,VXRT,United States
+717,Vaxcyte Inc. ,PCVX,United States
+718,Vaxxinity Inc.  ,VAXX,United States
+719,VBI Vaccines Inc,VBIV,United States
+720,Vera Therapeutics Inc.  ,VERA,United States
+721,Verastem Inc. ,VSTM,United States
+722,Vericel Corporation ,VCEL,United States
+723,Verona Pharma plc ,VRNA,United Kingdom
+724,Verrica Pharmaceuticals Inc. ,VRCA,United States
+725,Veru Inc. ,VERU,United States
+726,Vigil Neuroscience Inc. ,VIGL,United States
+727,Viking Therapeutics Inc. ,VKTX,United States
+728,Vincerx Pharma Inc. ,VINC,United States
+729,Vir Biotechnology Inc. ,VIR,United States
+730,Viracta Therapeutics Inc. ,VIRX,United States
+731,Virax Biolabs Group Limited ,VRAX,United Kingdom
+732,Virios Therapeutics Inc. ,VIRI,United States
+733,VistaGen Therapeutics Inc. ,VTGN,United States
+734,Vivani Medical Inc.  ,VANI,United States
+735,Vor Biopharma Inc. ,VOR,United States
+736,Voyager Therapeutics Inc. ,VYGR,United States
+737,vTv Therapeutics Inc.  ,VTVT,United States
+738,VYNE Therapeutics Inc. ,VYNE,United States
+739,Wave Life Sciences Ltd. ,WVE,Singapore
+740,Werewolf Therapeutics Inc. ,HOWL,United States
+741,Windtree Therapeutics Inc. ,WINT,United States
+742,X4 Pharmaceuticals Inc. ,XFOR,United States
+743,XBiotech Inc. ,XBIT,United States
+744,Xencor Inc. ,XNCR,United States
+745,Xenetic Biosciences Inc. ,XBIO,United States
+746,Xenon Pharmaceuticals Inc. ,XENE,Canada
+747,Xeris Biopharma Holdings Inc. ,XERS,United States
+748,Xilio Therapeutics Inc. ,XLO,United States
+749,XOMA Corporation ,XOMA,United States
+750,XORTX Therapeutics Inc. ,XRTX,Canada
+751,XTL Biopharmaceuticals Ltd. ,XTLB,Israel
+752,Y-mAbs Therapeutics Inc. ,YMAB,United States
+753,Zai Lab Limited ,ZLAB,China
+754,Zentalis Pharmaceuticals Inc. ,ZNTL,United States
+755,Zevra Therapeutics Inc. ,ZVRA,United States
+756,ZimVie Inc. ,ZIMV,United States
+757,Zura Bio Limited  ,ZURA,Cayman Islands
+758,Zymeworks Inc. ,ZYME,United States
+759,Zynex Inc. ,ZYXI,United States
+760,ZyVersa Therapeutics Inc. ,ZVSA,United States
