@@ -50,3 +50,9 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 - [clinicaltrials API information](https://classic.clinicaltrials.gov/api/gui)
 - [clinicaltrials API field list](https://classic.clinicaltrials.gov/api/info/study_fields_list)
 - [clinicaltrials API query](https://classic.clinicaltrials.gov/api/gui/demo/simple_study_fields)
+
+## TODO
+
+1. Only append trials with CompletionDate >= todays date
+2. Add simultaneous requests (without DoS)
+3. Connect to tradingview API to compare prices at particular dates
