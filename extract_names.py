@@ -1,8 +1,10 @@
 import csv
+import json
 import requests
 from pathlib import Path
 
-NASDAQ_LIST = Path('lists/nasdaq.csv')
+TEST_LIST          = Path('lists/test_list.csv')
+NASDAQ_LIST        = Path('lists/nasdaq.csv')
 COMPANY_EXTENSIONS = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'group']
 
 def extract_names(company_csv_list):
@@ -33,7 +35,7 @@ def extract_names(company_csv_list):
 
 def create_url_query(company_name):
   return f'https://classic.clinicaltrials.gov/api/query/study_fields?expr={company_name}\
-  &fields=BriefTitle%2CBriefSummary%2CStartDate%2CCompletionDate&min_rnk=1&max_rnk=1000&fmt=json'
+  &fields=NCTId%2COverallStatus%2CStudyFirstPostDate%2CStartDate%2CCompletionDate&min_rnk=1&max_rnk=1000&fmt=json'
 
 def get_trial_information(company_list):
   """
@@ -45,26 +47,54 @@ def get_trial_information(company_list):
   Returns:
   list: The companies that are soon (need to work out a cutoff) to start clinical trials.
   """
+  all_company_data = []
+
   for company_name in company_list:
     request = requests.get(create_url_query(company_name))
     if request.status_code == 200:
       # This is where we need to process the JSON data to extract the relevant information such as StartDate if >= todays date
-      print(request.json())
+      all_company_data.append(process_json(request.json()))
+  
+  return all_company_data
 
 def process_json(json_data):
   """
   Processes the json response returned by the get_trial_information() request.
   
-  Extracts the StartDate, TrialNumber, etc...
+  Extracts the NCTId, OverallStatus, StudyFirstPostDate, StartDate, and CompletionDate for each rank.
 
   Parameters:
-  json_data (str): The json needed to be processed
+  json_data (dict): The json needed to be processed
 
   Returns:
   list: The relevant data necessary for further company analysis
   """
-  pass
+  study_fields_response = json_data['StudyFieldsResponse']
+  field_list = study_fields_response.get('FieldList', [])
+  study_fields = study_fields_response.get('StudyFields', [])
+  expression = study_fields_response.get('Expression', '')
+
+  extracted_data = []
+
+  for trial in study_fields:
+    extracted_study = {
+      field: trial.get(field, [''])[0] if trial.get(field) else '' for field in field_list
+    }
+    extracted_study['CompanyName'] = expression
+    extracted_data.append(extracted_study)
+  print_json(extracted_data)
+  return extracted_data
+
+def print_json(json_data):
+  for trial in json_data:
+    print(
+      f"{trial['CompanyName']:20} | {trial['NCTId']:11} | "
+      f"Posted: {trial['StudyFirstPostDate']:17} | "
+      f"StartDate: {trial['StartDate']:17} | "
+      f"CompletionDate: {trial['CompletionDate']}"
+    )
 
 if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
-  get_trial_information(nasdaq_companies)
+  company_json_data = get_trial_information(nasdaq_companies)
+  # print_json(company_json_data)

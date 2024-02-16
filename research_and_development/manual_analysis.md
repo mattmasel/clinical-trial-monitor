@@ -27,8 +27,12 @@ Fields | Description
 BriefTitle | Short description of the study 
 BriefSummary | Short description of the study and tests to be performed
 CompletionDate | Estimated time of completion
+StudyFirstPostDate | Initial posting to clinicaltrials.gov
 StartDate | Start of trial
+CompletionDate | End of trial
+OverAllStatus | [Active, Recruiting, Not Yet Recruiting, Completed]
 NStudiesFound | If this value is `0` then there are no clinical trials available
+Rank | Each study gets their own rank
 
 ## Pharmaceutical Company List
 
