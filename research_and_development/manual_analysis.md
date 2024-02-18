@@ -51,6 +51,10 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 - [clinicaltrials API field list](https://classic.clinicaltrials.gov/api/info/study_fields_list)
 - [clinicaltrials API query](https://classic.clinicaltrials.gov/api/gui/demo/simple_study_fields)
 
+### Stock API
+
+-[AlphaVantage](https://www.alphavantage.co/documentation/)
+
 ## TODO
 
 1. Only append trials with CompletionDate >= todays date
