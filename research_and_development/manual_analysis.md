@@ -53,7 +53,7 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 
 ### Stock API
 
--[AlphaVantage](https://www.alphavantage.co/documentation/)
+- [AlphaVantage](https://www.alphavantage.co/documentation/)
 
 ## TODO
 
