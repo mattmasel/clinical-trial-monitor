@@ -1,11 +1,14 @@
 import csv
 import json
 import requests
+from datetime import datetime
 from pathlib import Path
+from os import getenv
 
-TEST_LIST          = Path('lists/test_list.csv')
-NASDAQ_LIST        = Path('lists/nasdaq.csv')
-COMPANY_EXTENSIONS = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'group']
+ALPHAVANTAGE_API_KEY  = getenv('ALPHA_VANTAGE')
+TEST_LIST             = Path('lists/test_list.csv')
+NASDAQ_LIST           = Path('lists/nasdaq.csv')
+COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'group']
 
 def extract_names(company_csv_list):
   """
@@ -33,6 +36,8 @@ def extract_names(company_csv_list):
   
   return search_expressions
 
+# Note: The new API will be taking effect as of mid-2024 and will need to be changed to the following format:
+# https://clinicaltrials.gov/api/v2/studies?query.term=incannex
 def create_url_query(company_name):
   return f'https://classic.clinicaltrials.gov/api/query/study_fields?expr={company_name}\
   &fields=NCTId%2COverallStatus%2CStudyFirstPostDate%2CStartDate%2CCompletionDate&min_rnk=1&max_rnk=1000&fmt=json'
@@ -87,14 +92,41 @@ def process_json(json_data):
 
 def print_json(json_data):
   for trial in json_data:
-    print(
-      f"{trial['CompanyName']:20} | {trial['NCTId']:11} | "
-      f"Posted: {trial['StudyFirstPostDate']:17} | "
-      f"StartDate: {trial['StartDate']:17} | "
-      f"CompletionDate: {trial['CompletionDate']}"
-    )
+    if convert_date_format(trial['StartDate']) is not None and \
+    convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
+      print(
+        f"{trial['CompanyName']:20} | {trial['NCTId']:11} | "
+        f"Posted: {trial['StudyFirstPostDate']:17} | "
+        f"StartDate: {trial['StartDate']:17} | "
+        f"CompletionDate: {trial['CompletionDate']}"
+      )
+
+def get_alphavantage_url(ticker):
+  return f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={API_KEY}'
+
+def get_price(ticker, date):
+  """
+  Note: The format for date is 2024-02-13
+  """
+  res = requests.get(get_alphavantage_url(ticker))
+  json_data = res.json()
+  return json_data["Time Series (Daily)"][date]
+
+def convert_date_format(date) -> str:
+  try:
+    date_obj = datetime.strptime(date, '%B %d, %Y')
+  except ValueError:
+    try:
+      date_obj = datetime.strptime(date, '%B %Y')
+    except ValueError:
+      return None
+  
+  formatted_date = date_obj.strftime('%Y-%m-%d')
+  return formatted_date
+
 
 if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
   company_json_data = get_trial_information(nasdaq_companies)
-  # print_json(company_json_data)
+  
+  # print(convert_date_format('October 15, 2009'))
