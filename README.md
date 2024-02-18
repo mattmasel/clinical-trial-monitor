@@ -3,6 +3,26 @@ Clinical trial stock price movement indicator
 
 ## Usage
 
+1. Setup python virtual environment 
+
+~~~bash
+python3 -m venv .venv
+~~~
+
+2. Install requirements
+
+~~~bash
+pip install -r requirements.txt
+~~~
+
+3. Set Nasdaq API key in local environmental variables
+
+~~~bash
+export NASDAQ_DATA_LINK_API_KEY=<YOUR_API_KEY>
+~~~
+
+4. Run the program
+
 ~~~bash
 python3 extract_names.py
 ~~~
