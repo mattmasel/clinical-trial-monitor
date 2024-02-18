@@ -129,4 +129,4 @@ if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
   company_json_data = get_trial_information(nasdaq_companies)
   
-  # print(convert_date_format('October 15, 2009'))
+  print(convert_date_format('October 15, 2009'))
