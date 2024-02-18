@@ -15,10 +15,10 @@ python3 -m venv .venv
 pip install -r requirements.txt
 ~~~
 
-3. Set Nasdaq API key in local environmental variables
+3. Set Alpha Vintage API key in local environmental variables (Used for stock price)
 
 ~~~bash
-export NASDAQ_DATA_LINK_API_KEY=<YOUR_API_KEY>
+export ALPHA_VINTAGE=<YOUR_API_KEY>
 ~~~
 
 4. Run the program
