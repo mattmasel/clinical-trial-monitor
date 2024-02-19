@@ -62,3 +62,4 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 3. Connect to yfinance API to compare prices at particular dates (Only 2000 requests per day)
   - Alpha Vantage only allows up to 25 per day...
   - if yfinance is not applicable then web scrape yahoo finance web application instead
+  -[yfinance](https://pypi.org/project/yfinance/)
