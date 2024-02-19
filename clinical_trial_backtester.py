@@ -1,14 +1,14 @@
 import csv
 import json
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from os import getenv
 
 ALPHAVANTAGE_API_KEY  = getenv('ALPHA_VANTAGE')
 TEST_LIST             = Path('lists/test_list.csv')
 NASDAQ_LIST           = Path('lists/nasdaq.csv')
-COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'group']
+COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
 
 def extract_names(company_csv_list):
   """
@@ -91,15 +91,29 @@ def process_json(json_data):
   return extracted_data
 
 def print_json(json_data):
+  """
+  For each trial a company has on clinicaltrials.gov extract the trials before todays date.
+
+  If date less than todays date, pass to price extractor to find prices and then calculate differences.
+
+  Parameters:
+  json_data (list of dicts): The trials for a company.
+
+  Returns:
+  List of dicts containing CompanyName, StudyFirstPostDate,StartDate,CompletionDate,StartPrice,EndPrice,PercentageDifference.
+  Note: Rename from print json to parse json?
+  """
   for trial in json_data:
     if convert_date_format(trial['StartDate']) is not None and \
     convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
+      # get_price() NEED TO EXTRACT THE TICKER
       print(
         f"{trial['CompanyName']:20} | {trial['NCTId']:11} | "
         f"Posted: {trial['StudyFirstPostDate']:17} | "
         f"StartDate: {trial['StartDate']:17} | "
         f"CompletionDate: {trial['CompletionDate']}"
       )
+    
 
 def get_alphavantage_url(ticker):
   return f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={API_KEY}'
@@ -110,9 +124,14 @@ def get_price(ticker, date):
   """
   res = requests.get(get_alphavantage_url(ticker))
   json_data = res.json()
+  start_price = json_data["Time Series (Daily)"][date]
+  end_price = json_data["Time Series (Daily)"][date]
   return json_data["Time Series (Daily)"][date]
 
 def convert_date_format(date) -> str:
+  """
+  Converts date from July 01, 2023 -> 2023-07-01
+  """
   try:
     date_obj = datetime.strptime(date, '%B %d, %Y')
   except ValueError:
@@ -126,7 +145,11 @@ def convert_date_format(date) -> str:
 
 
 if __name__ == '__main__':
-  nasdaq_companies = extract_names(NASDAQ_LIST)
-  company_json_data = get_trial_information(nasdaq_companies)
+  # nasdaq_companies = extract_names(NASDAQ_LIST)
+  # company_json_data = get_trial_information(nasdaq_companies)
   
-  print(convert_date_format('October 15, 2009'))
+  test_extract = extract_names(NASDAQ_LIST)
+
+  for company in test_extract:
+    print(company)
+
