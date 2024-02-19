@@ -1,3 +1,5 @@
+# 25 Requests per day...
+
 import csv
 import json
 import requests
@@ -29,10 +31,13 @@ def extract_names(company_csv_list):
     next(csv_reader)
     for row in csv_reader:
       company_name = row[1].split()
+      ticker = row[2]
       for word in reversed(company_name):
         if word.lower() in COMPANY_EXTENSIONS:
           company_name.remove(word)
-      search_expressions.append(' '.join(company_name))
+      expression = [' '.join(company_name), ticker]
+      # search_expressions.append(' '.join(company_name))
+      search_expressions.append(expression)
   
   return search_expressions
 
@@ -55,14 +60,14 @@ def get_trial_information(company_list):
   all_company_data = []
 
   for company_name in company_list:
-    request = requests.get(create_url_query(company_name))
+    request = requests.get(create_url_query(company_name[0]))
     if request.status_code == 200:
       # This is where we need to process the JSON data to extract the relevant information such as StartDate if >= todays date
-      all_company_data.append(process_json(request.json()))
+      all_company_data.append(process_json(request.json(), company_name[1]))
   
   return all_company_data
 
-def process_json(json_data):
+def process_json(json_data, ticker):
   """
   Processes the json response returned by the get_trial_information() request.
   
@@ -86,6 +91,7 @@ def process_json(json_data):
       field: trial.get(field, [''])[0] if trial.get(field) else '' for field in field_list
     }
     extracted_study['CompanyName'] = expression
+    extracted_study['Ticker'] = ticker
     extracted_data.append(extracted_study)
   print_json(extracted_data)
   return extracted_data
@@ -107,26 +113,41 @@ def print_json(json_data):
     if convert_date_format(trial['StartDate']) is not None and \
     convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
       # get_price() NEED TO EXTRACT THE TICKER
+      start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
+
       print(
-        f"{trial['CompanyName']:20} | {trial['NCTId']:11} | "
+        f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
+        f"{trial['NCTId']:11} | "
         f"Posted: {trial['StudyFirstPostDate']:17} | "
         f"StartDate: {trial['StartDate']:17} | "
-        f"CompletionDate: {trial['CompletionDate']}"
+        f"CompletionDate: {trial['CompletionDate']} | "
+        f"StartPrice: {start_price} | EndPrice: {end_price}"
       )
     
 
 def get_alphavantage_url(ticker):
-  return f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={API_KEY}'
+  return f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={ALPHAVANTAGE_API_KEY}'
 
 def get_price(ticker, date):
   """
   Note: The format for date is 2024-02-13
   """
+  # Convert time from datetime object to str
+  start_date = convert_date_format(date)
+  formatted_end_date = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
+  end_date = formatted_end_date.strftime('%Y-%m-%d')
+
   res = requests.get(get_alphavantage_url(ticker))
   json_data = res.json()
-  start_price = json_data["Time Series (Daily)"][date]
-  end_price = json_data["Time Series (Daily)"][date]
-  return json_data["Time Series (Daily)"][date]
+  try:
+    start_price = json_data["Time Series (Daily)"][start_date]
+  except KeyError:
+    return None, None
+  try:
+    end_price = json_data["Time Series (Daily)"][end_date]
+  except KeyError:
+    return None, None
+  return start_price, end_price
 
 def convert_date_format(date) -> str:
   """
@@ -145,11 +166,9 @@ def convert_date_format(date) -> str:
 
 
 if __name__ == '__main__':
-  # nasdaq_companies = extract_names(NASDAQ_LIST)
-  # company_json_data = get_trial_information(nasdaq_companies)
-  
-  test_extract = extract_names(NASDAQ_LIST)
+  nasdaq_companies = extract_names(NASDAQ_LIST)
+  company_json_data = get_trial_information(nasdaq_companies)
 
-  for company in test_extract:
-    print(company)
+  # TODO: If the date does NOT exist in alpha vantage database, then skip that date?
+  # print(get_price('ATNF', 'November 2007'))
 
