@@ -57,6 +57,8 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 
 ## TODO
 
-1. Only append trials with CompletionDate >= todays date
-2. Add simultaneous requests (without DoS)
-3. Connect to tradingview API to compare prices at particular dates
+1. Decide whether to use yfinance or url get request
+2. Save yfinance data to list and then replace per company iteration
+3. Connect to yfinance API to compare prices at particular dates (Only 2000 requests per day)
+  - Alpha Vantage only allows up to 25 per day...
+  - if yfinance is not applicable then web scrape yahoo finance web application instead

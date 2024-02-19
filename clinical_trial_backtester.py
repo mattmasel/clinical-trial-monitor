@@ -112,7 +112,8 @@ def print_json(json_data):
   for trial in json_data:
     if convert_date_format(trial['StartDate']) is not None and \
     convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
-      # get_price() NEED TO EXTRACT THE TICKER
+      # WE SHOULD DOWNLOAD THE DATA ONCE PER COMPANY AND THEN USE THAT DATA TO FIND TRIAL PRICE INFORMATION.
+      # THIS WILL REDUCE THE NUMBER OF yfinance REQUESTS BY A FACTOR OF AROUND 5
       start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
 
       print(
@@ -169,6 +170,7 @@ if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
   company_json_data = get_trial_information(nasdaq_companies)
 
-  # TODO: If the date does NOT exist in alpha vantage database, then skip that date?
-  # print(get_price('ATNF', 'November 2007'))
+  # TODO 1: Decide whether to use yfinance pypi or https://finance.yahoo.com/quote/{ticker}/history?p={ticker}
+  # TODO 2: If the date does NOT exist in yfinance database, then skip that date?
+  # TODO 3: Save the company stock price information to array per company and delete after use to reduce number of requests
 
