@@ -1,14 +1,11 @@
-# 25 Requests per day...
-
 import csv
 import json
 import requests
+import yfinance as yf
 from datetime import datetime, timedelta
 from pathlib import Path
 from os import getenv
 
-ALPHAVANTAGE_API_KEY  = getenv('ALPHA_VANTAGE')
-TEST_LIST             = Path('lists/test_list.csv')
 NASDAQ_LIST           = Path('lists/nasdaq.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
 
@@ -114,7 +111,7 @@ def print_json(json_data):
     convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
       # WE SHOULD DOWNLOAD THE DATA ONCE PER COMPANY AND THEN USE THAT DATA TO FIND TRIAL PRICE INFORMATION.
       # THIS WILL REDUCE THE NUMBER OF yfinance REQUESTS BY A FACTOR OF AROUND 5
-      start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
+      # start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
 
       print(
         f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
@@ -122,12 +119,8 @@ def print_json(json_data):
         f"Posted: {trial['StudyFirstPostDate']:17} | "
         f"StartDate: {trial['StartDate']:17} | "
         f"CompletionDate: {trial['CompletionDate']} | "
-        f"StartPrice: {start_price} | EndPrice: {end_price}"
+        # f"StartPrice: {start_price} | EndPrice: {end_price}"
       )
-    
-
-def get_alphavantage_url(ticker):
-  return f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={ALPHAVANTAGE_API_KEY}'
 
 def get_price(ticker, date):
   """
@@ -169,6 +162,8 @@ def convert_date_format(date) -> str:
 if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
   company_json_data = get_trial_information(nasdaq_companies)
+
+  # print(get_price(ticker='IXHL', date='February 10, 2024'))
 
   # TODO 1: Decide whether to use yfinance pypi or https://finance.yahoo.com/quote/{ticker}/history?p={ticker}
   # TODO 2: If the date does NOT exist in yfinance database, then skip that date?
