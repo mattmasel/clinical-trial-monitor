@@ -2,6 +2,7 @@ import csv
 import json
 import requests
 import yfinance as yf
+import pandas as pd
 from datetime import datetime, timedelta
 from pathlib import Path
 from os import getenv
@@ -137,29 +138,43 @@ def get_prices(ticker):
   # data = company.history(start=start_date, end=end_date)
   return ticker_data.history(period="max")
 
+def get_price_range(company_data, start_date, end_date):
+  count = 1
+  while len(company_data.loc[start_date:end_date]) != 3:
+    start_date, end_date = (datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=count)).strftime('%Y-%m-%d'), \
+    (datetime.strptime(end_date, '%Y-%m-%d') + timedelta(days=count)).strftime('%Y-%m-%d')
+    count += 1
+  print(count)
+  return company_data.loc[start_date:end_date]
+
 def get_price(company_daily_prices, start_date):
   """
   Note: The format for date is 2024-02-13
   """
-  sell_datetime = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
-  sell_date = sell_datetime.strftime('%Y-%m-%d')
+  sell_date = (datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)).strftime('%Y-%m-%d')
 
-  price_data = company_daily_prices.loc[start_date:sell_date]
+  price_data = get_price_range(company_daily_prices, start_date, sell_date)
 
+  #  Fix this tomorrow
+  if price_data is not None:
+    buy_price = price_data['Close'].values[0]
+    sell_price = price_data['Close'].values[2]
+    return buy_price, sell_price
+  else: 
+    return None, None
 
   # TODO: If there is no sell_price or buy_price for that date find nearest date and use that instead.
-  try:
-    buy_price = price_data['Close'].values[0]
-  except IndexError:
-    print('No price data for buy_date')
-    return None, None
-  try:
-    sell_price = price_data['Close'].values[2]
-  except IndexError:
-    print('No price data for sell_date')
-    return buy_price, None
+  # try:
+  #   buy_price = price_data['Close'].values[0]
+  # except IndexError:
+  #   print('No price data for buy_date')
+  #   return None, None
+  # try:
+  #   sell_price = price_data['Close'].values[2]
+  # except IndexError:
+  #   print('No price data for sell_date')
+  #   return buy_price, None
 
-  return buy_price, sell_price
   # # Convert time from datetime object to str
   # start_date = convert_date_format(date)
   # formatted_end_date = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
