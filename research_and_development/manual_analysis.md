@@ -58,5 +58,5 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 
 ## TODO
 
-1. Collect all stock prices as array and then iterate for each trial date to reduce number of requests
+1. If the stockmarket is closed on the buy / sell date, then increase date until there is a price available. 
 
