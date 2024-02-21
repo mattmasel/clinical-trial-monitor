@@ -2,13 +2,13 @@ import csv
 import warnings
 import requests
 import yfinance as yf
-import pandas as pd
 from datetime import datetime, timedelta
 from pathlib import Path
 from os import getenv
 
-NASDAQ_LIST           = Path('lists/nasdaq.csv')
+NASDAQ_LIST           = Path('lists', 'nasdaq.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
+OUTPUT_CSV_FILE_PATH  = Path('lists', 'output.csv')
 
 warnings.filterwarnings("ignore", message="The 'unit' keyword in TimedeltaIndex construction is deprecated*")
 
@@ -103,10 +103,10 @@ def process_json(json_data, ticker):
     extracted_study['Ticker'] = ticker
     extracted_data.append(extracted_study)
   
-  return print_json(extracted_data, company_daily_prices, csv_list)
+  return add_price_data(extracted_data, company_daily_prices, csv_list)
   # return extracted_data
 
-def print_json(json_data, company_daily_prices, csv_list):
+def add_price_data(json_data, company_daily_prices, csv_list):
   """
   For each trial a company has on clinicaltrials.gov extract the trials before todays date.
 
@@ -137,15 +137,7 @@ def print_json(json_data, company_daily_prices, csv_list):
           f"{sell_price:.2f}",
           f"{price_difference:.2f}"
         ])
-        # print(
-        #   f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
-        #   f"{trial['NCTId']:11} | "
-        #   f"Posted: {trial['StudyFirstPostDate']:17} | "
-        #   f"StartDate: {trial['StartDate']:17} | "
-        #   f"CompletionDate: {trial['CompletionDate']} | "
-        #   f"StartPrice: {buy_price:.2f} | EndPrice: {sell_price:.2f} | "
-        #   f"Percentage Price Difference: {price_difference:.2f}%"
-        # )
+
   return csv_list
 
 def get_prices(ticker):
@@ -193,8 +185,6 @@ def get_price(company_daily_prices, start_date):
   sell_price = price_data['Close'].values[2]
   return buy_price, sell_price
 
-  # TODO: If there is no sell_price or buy_price for that date find nearest date and use that instead.
-
 def convert_date_format(date) -> str:
   """
   Converts date from July 01, 2023 -> 2023-07-01
@@ -210,10 +200,36 @@ def convert_date_format(date) -> str:
   formatted_date = date_obj.strftime('%Y-%m-%d')
   return formatted_date
 
+def get_average_percent_change(company_csv_data) -> float:
+  """
+  Calculates the average percentage change for all trials
+
+  Parameters:
+  company_csv_data (list of lists): Contains all price differences in percent for each trial start date.
+
+  Returns:
+  The average percent change for all trials
+  """
+  sum_percent_change, count = 0, 0
+
+  for trial in company_csv_data[1:]:
+    percent_change = float(trial[-1])
+    sum_percent_change += percent_change
+    count += 1
+
+  return sum_percent_change / count
+
+def save_to_csv(company_csv_data):
+  with open(OUTPUT_CSV_FILE_PATH, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(company_csv_data)
+    print(f"Data saved to {OUTPUT_CSV_FILE_PATH}")
 
 if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
   company_csv_data = get_trial_information(nasdaq_companies)
+  save_to_csv(company_csv_data)
+  print(get_average_percent_change(company_csv_data))
 
   # TODO 1: Save company_csv_data to file for future analysis, otherwise use to calculate averages
 
