@@ -218,7 +218,7 @@ def get_average_percent_change(company_csv_data) -> float:
       count += 1
     except ValueError:
       print(f"Error converting value to float: {trial[-1]}")
-
+  
   if count == 0:
     return 0
 
@@ -236,5 +236,5 @@ if __name__ == '__main__':
   save_to_csv(company_csv_data)
   print(get_average_percent_change(company_csv_data))
 
-  # TODO 1: Save company_csv_data to file for future analysis, otherwise use to calculate averages
+  # TODO 1: Fix output_csv file format, currently it is keeping the "[]" and needs to be removed
 
