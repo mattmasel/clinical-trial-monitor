@@ -56,7 +56,7 @@ def get_trial_information(company_list):
   Returns:
   list: The companies that are soon (need to work out a cutoff) to start clinical trials.
   """
-  all_company_data = [['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff']]
+  all_company_data = []
 
   for company_name in company_list:
     request = requests.get(create_url_query(company_name[0]))
@@ -211,7 +211,7 @@ def get_average_percent_change(company_csv_data) -> float:
   """
   sum_percent_change, count = 0, 0
 
-  for trial in company_csv_data[1:]:
+  for trial in company_csv_data:
     try:
       percent_change = float(trial[-1])
       sum_percent_change += percent_change
@@ -227,7 +227,9 @@ def get_average_percent_change(company_csv_data) -> float:
 def save_to_csv(company_csv_data):
   with open(OUTPUT_CSV_FILE_PATH, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerows(company_csv_data)
+    writer.writerow(['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff'])
+    for row in company_csv_data:
+      writer.writerow(row)
     print(f"Data saved to {OUTPUT_CSV_FILE_PATH}")
 
 if __name__ == '__main__':
