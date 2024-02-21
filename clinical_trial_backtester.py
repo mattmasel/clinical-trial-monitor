@@ -4,7 +4,6 @@ import requests
 import yfinance as yf
 from datetime import datetime, timedelta
 from pathlib import Path
-from os import getenv
 
 NASDAQ_LIST           = Path('lists', 'nasdaq.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
@@ -57,7 +56,7 @@ def get_trial_information(company_list):
   Returns:
   list: The companies that are soon (need to work out a cutoff) to start clinical trials.
   """
-  all_company_data = ['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff']
+  all_company_data = [['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff']]
 
   for company_name in company_list:
     request = requests.get(create_url_query(company_name[0]))
@@ -213,9 +212,15 @@ def get_average_percent_change(company_csv_data) -> float:
   sum_percent_change, count = 0, 0
 
   for trial in company_csv_data[1:]:
-    percent_change = float(trial[-1])
-    sum_percent_change += percent_change
-    count += 1
+    try:
+      percent_change = float(trial[-1])
+      sum_percent_change += percent_change
+      count += 1
+    except ValueError:
+      print(f"Error converting value to float: {trial[-1]}")
+
+  if count == 0:
+    return 0
 
   return sum_percent_change / count
 
