@@ -12,6 +12,7 @@ def get_price_range(company_data, start_date, end_date):
 if __name__ == '__main__':
   ixhl_data = get_all_prices('IXHL')
   print(ixhl_data)
-  print(get_price_range(ixhl_data, '2024-02-14', '2024-02-16'))
-  print(get_price_range(ixhl_data, '2024-01-20', '2024-01-23'))
+
+  price_average = get_price_range(ixhl_data, '2024-02-14', '2024-02-16')
+  print(price_average['Close'].values)
 

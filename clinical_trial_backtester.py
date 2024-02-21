@@ -83,6 +83,9 @@ def process_json(json_data, ticker):
 
   extracted_data = []
 
+  # Get historical stock prices for company
+  company_daily_prices = get_prices(ticker)
+
   for trial in study_fields:
     extracted_study = {
       field: trial.get(field, [''])[0] if trial.get(field) else '' for field in field_list
@@ -90,10 +93,11 @@ def process_json(json_data, ticker):
     extracted_study['CompanyName'] = expression
     extracted_study['Ticker'] = ticker
     extracted_data.append(extracted_study)
-  print_json(extracted_data)
+  
+  print_json(extracted_data, company_daily_prices)
   return extracted_data
 
-def print_json(json_data):
+def print_json(json_data, company_daily_prices):
   """
   For each trial a company has on clinicaltrials.gov extract the trials before todays date.
 
@@ -107,11 +111,16 @@ def print_json(json_data):
   Note: Rename from print json to parse json?
   """
   for trial in json_data:
-    if convert_date_format(trial['StartDate']) is not None and \
-    convert_date_format(trial['StartDate']) <= datetime.today().strftime('%Y-%m-%d'):
+    start_date = convert_date_format(trial['StartDate'])
+    if start_date is not None and start_date <= datetime.today().strftime('%Y-%m-%d'):
       # WE SHOULD DOWNLOAD THE DATA ONCE PER COMPANY AND THEN USE THAT DATA TO FIND TRIAL PRICE INFORMATION.
       # THIS WILL REDUCE THE NUMBER OF yfinance REQUESTS BY A FACTOR OF AROUND 5
+      buy_price, sell_price = get_price(company_daily_prices, start_date)
       # start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
+      if buy_price and sell_price is not None:
+        price_difference = ((sell_price - buy_price) / (buy_price + sell_price) / 2) * 100
+      else:
+        price_difference = 0.0
 
       print(
         f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
@@ -119,29 +128,54 @@ def print_json(json_data):
         f"Posted: {trial['StudyFirstPostDate']:17} | "
         f"StartDate: {trial['StartDate']:17} | "
         f"CompletionDate: {trial['CompletionDate']} | "
-        # f"StartPrice: {start_price} | EndPrice: {end_price}"
+        f"StartPrice: {buy_price} | EndPrice: {sell_price} | "
+        f"Percentage Price Difference: {price_difference:.2f}%"
       )
 
-def get_price(ticker, date):
+def get_prices(ticker):
+  ticker_data = yf.Ticker(ticker)
+  # data = company.history(start=start_date, end=end_date)
+  return ticker_data.history(period="max")
+
+def get_price(company_daily_prices, start_date):
   """
   Note: The format for date is 2024-02-13
   """
-  # Convert time from datetime object to str
-  start_date = convert_date_format(date)
-  formatted_end_date = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
-  end_date = formatted_end_date.strftime('%Y-%m-%d')
+  sell_datetime = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
+  sell_date = sell_datetime.strftime('%Y-%m-%d')
 
-  res = requests.get(get_alphavantage_url(ticker))
-  json_data = res.json()
+  price_data = company_daily_prices.loc[start_date:sell_date]
+
+
+  # TODO: If there is no sell_price or buy_price for that date find nearest date and use that instead.
   try:
-    start_price = json_data["Time Series (Daily)"][start_date]
-  except KeyError:
+    buy_price = price_data['Close'].values[0]
+  except IndexError:
+    print('No price data for buy_date')
     return None, None
   try:
-    end_price = json_data["Time Series (Daily)"][end_date]
-  except KeyError:
-    return None, None
-  return start_price, end_price
+    sell_price = price_data['Close'].values[2]
+  except IndexError:
+    print('No price data for sell_date')
+    return buy_price, None
+
+  return buy_price, sell_price
+  # # Convert time from datetime object to str
+  # start_date = convert_date_format(date)
+  # formatted_end_date = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
+  # end_date = formatted_end_date.strftime('%Y-%m-%d')
+
+  # res = requests.get(get_alphavantage_url(ticker))
+  # json_data = res.json()
+  # try:
+  #   start_price = json_data["Time Series (Daily)"][start_date]
+  # except KeyError:
+  #   return None, None
+  # try:
+  #   end_price = json_data["Time Series (Daily)"][end_date]
+  # except KeyError:
+  #   return None, None
+  # return start_price, end_price
 
 def convert_date_format(date) -> str:
   """
