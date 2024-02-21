@@ -1,5 +1,5 @@
 import csv
-import json
+import warnings
 import requests
 import yfinance as yf
 import pandas as pd
@@ -9,6 +9,8 @@ from os import getenv
 
 NASDAQ_LIST           = Path('lists/nasdaq.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
+
+warnings.filterwarnings("ignore", message="The 'unit' keyword in TimedeltaIndex construction is deprecated*")
 
 def extract_names(company_csv_list):
   """
@@ -55,13 +57,17 @@ def get_trial_information(company_list):
   Returns:
   list: The companies that are soon (need to work out a cutoff) to start clinical trials.
   """
-  all_company_data = []
+  all_company_data = ['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff']
 
   for company_name in company_list:
     request = requests.get(create_url_query(company_name[0]))
     if request.status_code == 200:
       # This is where we need to process the JSON data to extract the relevant information such as StartDate if >= todays date
-      all_company_data.append(process_json(request.json(), company_name[1]))
+      current_company_csv = process_json(request.json(), company_name[1])
+      all_company_data.append(current_company_csv)
+
+      for trial in current_company_csv:
+        print(trial)
   
   return all_company_data
 
@@ -77,6 +83,8 @@ def process_json(json_data, ticker):
   Returns:
   list: The relevant data necessary for further company analysis
   """
+  csv_list = []
+
   study_fields_response = json_data['StudyFieldsResponse']
   field_list = study_fields_response.get('FieldList', [])
   study_fields = study_fields_response.get('StudyFields', [])
@@ -95,10 +103,10 @@ def process_json(json_data, ticker):
     extracted_study['Ticker'] = ticker
     extracted_data.append(extracted_study)
   
-  print_json(extracted_data, company_daily_prices)
-  return extracted_data
+  return print_json(extracted_data, company_daily_prices, csv_list)
+  # return extracted_data
 
-def print_json(json_data, company_daily_prices):
+def print_json(json_data, company_daily_prices, csv_list):
   """
   For each trial a company has on clinicaltrials.gov extract the trials before todays date.
 
@@ -118,20 +126,27 @@ def print_json(json_data, company_daily_prices):
       # THIS WILL REDUCE THE NUMBER OF yfinance REQUESTS BY A FACTOR OF AROUND 5
       buy_price, sell_price = get_price(company_daily_prices, start_date)
       # start_price, end_price = get_price(trial['Ticker'],trial['StartDate'])
-      if buy_price and sell_price is not None:
+      if buy_price or sell_price is not None:
         price_difference = ((sell_price - buy_price) / (buy_price + sell_price) / 2) * 100
-      else:
-        price_difference = 0.0
-
-      print(
-        f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
-        f"{trial['NCTId']:11} | "
-        f"Posted: {trial['StudyFirstPostDate']:17} | "
-        f"StartDate: {trial['StartDate']:17} | "
-        f"CompletionDate: {trial['CompletionDate']} | "
-        f"StartPrice: {buy_price} | EndPrice: {sell_price} | "
-        f"Percentage Price Difference: {price_difference:.2f}%"
-      )
+        csv_list.append([
+          trial['Ticker'], 
+          trial['NCTId'], 
+          trial['StartDate'],
+          trial['CompletionDate'],
+          f"{buy_price:.2f}",
+          f"{sell_price:.2f}",
+          f"{price_difference:.2f}"
+        ])
+        # print(
+        #   f"{trial['CompanyName']:20} | {trial['Ticker']:4} | "
+        #   f"{trial['NCTId']:11} | "
+        #   f"Posted: {trial['StudyFirstPostDate']:17} | "
+        #   f"StartDate: {trial['StartDate']:17} | "
+        #   f"CompletionDate: {trial['CompletionDate']} | "
+        #   f"StartPrice: {buy_price:.2f} | EndPrice: {sell_price:.2f} | "
+        #   f"Percentage Price Difference: {price_difference:.2f}%"
+        # )
+  return csv_list
 
 def get_prices(ticker):
   ticker_data = yf.Ticker(ticker)
@@ -139,12 +154,27 @@ def get_prices(ticker):
   return ticker_data.history(period="max")
 
 def get_price_range(company_data, start_date, end_date):
+  """
+  Iterates the start_date forward one day until it finds a three day range.
+
+  If start_date is greater than 10 days past the trial start_date it will ignore that trial.
+
+  Parameters:
+  company_data (DataFrame): Contains all daily prices for a given ticker.
+  start_date (str): The start date of the given clinical trial.
+  end_date (str): The date 3 days after the given clinical trial.
+
+  Returns:
+  DataFrame containing the ticker prices for three days starting at the start_date.
+  """
   count = 1
   while len(company_data.loc[start_date:end_date]) != 3:
+    if count > 10:
+      return None
     start_date, end_date = (datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=count)).strftime('%Y-%m-%d'), \
     (datetime.strptime(end_date, '%Y-%m-%d') + timedelta(days=count)).strftime('%Y-%m-%d')
     count += 1
-  print(count)
+  # print(count)
   return company_data.loc[start_date:end_date]
 
 def get_price(company_daily_prices, start_date):
@@ -156,41 +186,14 @@ def get_price(company_daily_prices, start_date):
   price_data = get_price_range(company_daily_prices, start_date, sell_date)
 
   #  Fix this tomorrow
-  if price_data is not None:
-    buy_price = price_data['Close'].values[0]
-    sell_price = price_data['Close'].values[2]
-    return buy_price, sell_price
-  else: 
+  if price_data is None:
     return None, None
+  
+  buy_price = price_data['Close'].values[0]
+  sell_price = price_data['Close'].values[2]
+  return buy_price, sell_price
 
   # TODO: If there is no sell_price or buy_price for that date find nearest date and use that instead.
-  # try:
-  #   buy_price = price_data['Close'].values[0]
-  # except IndexError:
-  #   print('No price data for buy_date')
-  #   return None, None
-  # try:
-  #   sell_price = price_data['Close'].values[2]
-  # except IndexError:
-  #   print('No price data for sell_date')
-  #   return buy_price, None
-
-  # # Convert time from datetime object to str
-  # start_date = convert_date_format(date)
-  # formatted_end_date = datetime.strptime(start_date, '%Y-%m-%d') + timedelta(days=3)
-  # end_date = formatted_end_date.strftime('%Y-%m-%d')
-
-  # res = requests.get(get_alphavantage_url(ticker))
-  # json_data = res.json()
-  # try:
-  #   start_price = json_data["Time Series (Daily)"][start_date]
-  # except KeyError:
-  #   return None, None
-  # try:
-  #   end_price = json_data["Time Series (Daily)"][end_date]
-  # except KeyError:
-  #   return None, None
-  # return start_price, end_price
 
 def convert_date_format(date) -> str:
   """
@@ -210,11 +213,7 @@ def convert_date_format(date) -> str:
 
 if __name__ == '__main__':
   nasdaq_companies = extract_names(NASDAQ_LIST)
-  company_json_data = get_trial_information(nasdaq_companies)
+  company_csv_data = get_trial_information(nasdaq_companies)
 
-  # print(get_price(ticker='IXHL', date='February 10, 2024'))
-
-  # TODO 1: Decide whether to use yfinance pypi or https://finance.yahoo.com/quote/{ticker}/history?p={ticker}
-  # TODO 2: If the date does NOT exist in yfinance database, then skip that date?
-  # TODO 3: Save the company stock price information to array per company and delete after use to reduce number of requests
+  # TODO 1: Save company_csv_data to file for future analysis, otherwise use to calculate averages
 
