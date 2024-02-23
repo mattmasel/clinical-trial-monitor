@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 NASDAQ_LIST           = Path('lists', 'nasdaq.csv')
+TEST_LIST             = Path('lists', 'test_list.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
 OUTPUT_CSV_FILE_PATH  = Path('lists', 'output.csv')
 
@@ -211,13 +212,14 @@ def get_average_percent_change(company_csv_data) -> float:
   """
   sum_percent_change, count = 0, 0
 
-  for trial in company_csv_data:
-    try:
-      percent_change = float(trial[-1])
-      sum_percent_change += percent_change
-      count += 1
-    except ValueError:
-      print(f"Error converting value to float: {trial[-1]}")
+  for company in company_csv_data:
+    for trial in company:
+      try:
+        percent_change = float(trial[-1])
+        sum_percent_change += percent_change
+        count += 1
+      except ValueError:
+        print(f"Error converting value to float: {trial[-1]}")
   
   if count == 0:
     return 0
@@ -228,8 +230,9 @@ def save_to_csv(company_csv_data):
   with open(OUTPUT_CSV_FILE_PATH, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff'])
-    for row in company_csv_data:
-      writer.writerow(row)
+    for company in company_csv_data:
+      for row in company:
+        writer.writerow(row)
     print(f"Data saved to {OUTPUT_CSV_FILE_PATH}")
 
 if __name__ == '__main__':
