@@ -56,7 +56,16 @@ When creating a list of pharmaceutical companies it is necessary to remove: *inc
 - [yfinance](https://github.com/ranaroussi/yfinance)
 - [yfinance PyPI](https://pypi.org/project/yfinance/)
 
+## Start Dates
+
+Date Field | Description
+---------- | -----------
+StartDate | When the study will commence
+EndDate | When the study will conclude
+StudyFirstPostDate | The estimated date that the trial was made available
+StudyFirstSubmitDate | When the study was submitted
+StudyFirstSubmitQCDate | When the study passed the Quality Control review
+
 ## TODO
 
-1. If the stockmarket is closed on the buy / sell date, then increase date until there is a price available. 
-
+1. Only take trials from the same year to reduce chance of trends affecting the data

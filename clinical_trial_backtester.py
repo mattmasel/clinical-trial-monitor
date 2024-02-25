@@ -8,7 +8,13 @@ from pathlib import Path
 NASDAQ_LIST           = Path('lists', 'nasdaq.csv')
 TEST_LIST             = Path('lists', 'test_list.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
-OUTPUT_CSV_FILE_PATH  = Path('lists', 'output.csv')
+OUTPUT_CSV_FILE_PATH  = Path('results', 'output.csv')
+
+# Clinical Trial API Fields
+ID         = 'NCTId'
+STATUS     = 'OverallStatus'
+START_DATE = 'StudyFirstSubmitQCDate'
+END_DATE   = 'CompletionDate'
 
 warnings.filterwarnings("ignore", message="The 'unit' keyword in TimedeltaIndex construction is deprecated*")
 
@@ -45,7 +51,7 @@ def extract_names(company_csv_list):
 # https://clinicaltrials.gov/api/v2/studies?query.term=incannex
 def create_url_query(company_name):
   return f'https://classic.clinicaltrials.gov/api/query/study_fields?expr={company_name}\
-  &fields=NCTId%2COverallStatus%2CStudyFirstPostDate%2CStartDate%2CCompletionDate&min_rnk=1&max_rnk=1000&fmt=json'
+  &fields={ID}%2C{STATUS}%2C{START_DATE}%2C{END_DATE}&min_rnk=1&max_rnk=1000&fmt=json'
 
 def get_trial_information(company_list):
   """
@@ -120,7 +126,7 @@ def add_price_data(json_data, company_daily_prices, csv_list):
   Note: Rename from print json to parse json?
   """
   for trial in json_data:
-    start_date = convert_date_format(trial['StartDate'])
+    start_date = convert_date_format(trial[START_DATE])
     if start_date is not None and start_date <= datetime.today().strftime('%Y-%m-%d'):
       # WE SHOULD DOWNLOAD THE DATA ONCE PER COMPANY AND THEN USE THAT DATA TO FIND TRIAL PRICE INFORMATION.
       # THIS WILL REDUCE THE NUMBER OF yfinance REQUESTS BY A FACTOR OF AROUND 5
@@ -130,9 +136,9 @@ def add_price_data(json_data, company_daily_prices, csv_list):
         price_difference = ((sell_price - buy_price) / (buy_price + sell_price) / 2) * 100
         csv_list.append([
           trial['Ticker'], 
-          trial['NCTId'], 
-          trial['StartDate'],
-          trial['CompletionDate'],
+          trial[ID], 
+          trial[START_DATE],
+          trial[END_DATE],
           f"{buy_price:.2f}",
           f"{sell_price:.2f}",
           f"{price_difference:.2f}"
@@ -229,7 +235,7 @@ def get_average_percent_change(company_csv_data) -> float:
 def save_to_csv(company_csv_data):
   with open(OUTPUT_CSV_FILE_PATH, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Ticker','NCTId','StartDate','CompletionDate','BuyPrice','SellPrice','PercentDiff'])
+    writer.writerow(['Ticker',ID,START_DATE,END_DATE,'BuyPrice','SellPrice','PercentDiff'])
     for company in company_csv_data:
       for row in company:
         writer.writerow(row)
