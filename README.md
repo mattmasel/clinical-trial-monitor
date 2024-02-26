@@ -1,5 +1,11 @@
 # clinical-trial-monitor
-Clinical trial stock price movement indicator 
+Clinical trial stock price movement indicator
+
+## Description
+
+Currently the clinical trial backtester fetches price data based on the clinical trial start date and then calculates the average price difference as a percent.
+
+Future implementations will fetch clinical trial data once a day and then alert via rss feed or discord to the ticker associated with the clinical trial data. However this is dependent on whether the backtesting data shows a significant positive price differential.
 
 ## Usage
 
@@ -15,16 +21,10 @@ python3 -m venv .venv
 pip install -r requirements.txt
 ~~~
 
-3. Set Alpha Vintage API key in local environmental variables (Used for stock price)
+3. Run the program
 
 ~~~bash
-export ALPHA_VINTAGE=<YOUR_API_KEY>
-~~~
-
-4. Run the program
-
-~~~bash
-python3 extract_names.py
+python3 clinical_trial_backtester.py
 ~~~
 
 ## Process
