@@ -65,7 +65,18 @@ EndDate | When the study will conclude
 StudyFirstPostDate | The estimated date that the trial was made available
 StudyFirstSubmitDate | When the study was submitted
 StudyFirstSubmitQCDate | When the study passed the Quality Control review
+ResultsFirstPostDate | When the results were posted
+ResultsFirstSubmitDate | When the results were submitted
+ResultsFirstSubmitQCDate | When the results where first verified
 
 ## TODO
 
 1. Only take trials from the same year to reduce chance of trends affecting the data
+2. Investigate negative data, what year was it?
+
+## Results
+
+Start Date Field | Percentage Difference
+---------------- | ---------------------
+StudyFirstPostDate | -0.03508451847407963
+StudyFirstSubmitDate | 
