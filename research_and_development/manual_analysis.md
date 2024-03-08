@@ -80,3 +80,4 @@ Start Date Field | Percentage Difference
 ---------------- | ---------------------
 StudyFirstPostDate | -0.03508451847407963
 StudyFirstSubmitDate | 
+ResultsFirstPostDate | -0.0262478534630795351

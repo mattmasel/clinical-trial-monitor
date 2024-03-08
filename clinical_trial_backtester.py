@@ -8,12 +8,12 @@ from pathlib import Path
 NASDAQ_LIST           = Path('lists', 'nasdaq.csv')
 TEST_LIST             = Path('lists', 'test_list.csv')
 COMPANY_EXTENSIONS    = ['inc.', 'ltd.', 'corp.', 'co.', 'incorporated', 'limited', 'corporation', 'holding', 'holdings', 'group']
-OUTPUT_CSV_FILE_PATH  = Path('results', 'studyfirstpostdate.csv')
+OUTPUT_CSV_FILE_PATH  = Path('results', 'resultsfirstpostdate.csv')
 
 # Clinical Trial API Fields
 ID         = 'NCTId'
 STATUS     = 'OverallStatus'
-START_DATE = 'StudyFirstPostDate'
+START_DATE = 'ResultsFirstPostDate'
 END_DATE   = 'CompletionDate'
 
 warnings.filterwarnings("ignore", message="The 'unit' keyword in TimedeltaIndex construction is deprecated*")
