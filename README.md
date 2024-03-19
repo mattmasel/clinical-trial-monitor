@@ -29,6 +29,9 @@ python3 clinical_trial_backtester.py
 
 ## Process
 
+**This is not intended as financial advice**  
+**Use at your own risk**
+
 1. Extract companies from list of publicly listed companies
 2. Send query to clinicaltrials API using company name
 3. Analyse JSON data for trials that are about to start
